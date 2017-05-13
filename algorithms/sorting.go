@@ -1,8 +1,18 @@
 package algorithms
 
 // Les https://en.wikipedia.org/wiki/Bubble_sort
-func Bubble_sort_modified(list []int) {
-	// Deres kode her
+func Bubble_sort_modified(list []int) []int { // []int så vi kan returnere en arraylist.
+n := len(list)
+	for i := 0; i < n; i++ {
+		for j := 0; j < n-1; j++ {
+			if list[j] > list[j+1] {
+				temp := list[j+1]
+				list[j+1] = list[j]
+				list[j] = temp
+			}
+		}
+	}
+	return list // Returnere lista.
 }
 
 // Implementering av Bubble_sort algoritmen
