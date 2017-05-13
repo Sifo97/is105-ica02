@@ -10,7 +10,8 @@ var sum_tests_int8 = []struct {
 }{
 	{1, 2, 3},
 	{4, 5, 9},
-	{120, 1, 119},
+	{126, 1, 127},
+	{-127, -1, -127},
 }
 
 func TestSumInt8(t *testing.T) {
@@ -28,7 +29,8 @@ var sum_tests_uint32 = []struct {
 }{
 	{1, 2, 3},
 	{4, 5, 9},
-	{120, 1, 119},
+	{127, 1, 128},
+	{4294967294, 1, 4294967294},
 }
 
 func TestSumUint32(t *testing.T) {
@@ -47,7 +49,8 @@ var sum_tests_int64 = []struct {
 }{
 	{1, 2, 3},
 	{4, 5, 9},
-	{120, 1, 119},
+	{127, 1, 128},
+	{9223372036854775806, 1, 9223372036854775806},
 }
 
 func TestSumInt64(t *testing.T) {
@@ -66,7 +69,8 @@ var sum_tests_int32 = []struct {
 }{
 	{1, 2, 3},
 	{4, 5, 9},
-	{120, 1, 119},
+	{127, 1, 128},
+	{2147483646, 1, 2147483646},
 }
 
 func TestSumInt32(t *testing.T) {
@@ -83,9 +87,10 @@ var sum_tests_float64 = []struct {
 	n2		 float64
 	expected float64
 }{
-	{1.1, 2.2, 3.3},
-	{4.1, 5.2, 9.3},
-	{120.1, 1.2, 119.3},
+	{1, 2, 3},
+	{4, 5, 9},
+	{127, 1, 128},
+	{1.000785, 1, 2},
 }
 
 func TestSumFloat64(t *testing.T) {
